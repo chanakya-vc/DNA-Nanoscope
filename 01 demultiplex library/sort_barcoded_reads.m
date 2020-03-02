@@ -1,13 +1,9 @@
-% Abstract
-% 1. Reads are in the form of fastq files and are situated in the
-% fastq_directory. 
-% 2. fastq files have filenames of the form fastq_prefix_0, fastq_prefix_1
-% .... fastq_prefix_numfiles
-% 3. Output structure: Directories BC1, BC2, ... , BC48 in
-% fastq_directory/demux. BC1 contains files fastq_prefix_0, fastq_prefix_1
-% .... fastq_prefix_numfiles with BC1 reads only. Ditto for the other
-% barcodes
-%
+% Usage: 
+% sort_barcoded_reads(fastq_dir,ONT_barcodes)
+% where:
+% fastq_dir is the path of the fastq sequence files and
+% barcodes (see file ONT_library_barcodes.mat) specifies the sequencing barcodes (from Oxford Nanotech i.e. ONT) and their reverse complements.
+% The output is written into fastq files with reads that are sorted into sub-directories corresponding to the identity of the sequencing barcodes.
 
 function sort_barcoded_reads(fastq_directory, barcodes)
 total_time = tic; % start timing the total time to process all files
@@ -32,7 +28,6 @@ parfor k=1:numfiles
     split_barcodes(fastq_directory,fastq_filename,barcodes); % append barcode id to
     % print progress
     elapsed_time = toc(for_time);   
-    %file_id = k;
     fprintf('Processed file %s in %.0f seconds\n',fastq_filename,elapsed_time);
 end
 
