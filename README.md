@@ -1,7 +1,6 @@
 # DNA-Nanoscope
 DNA Nanoscope "sequencing by imaging" reconstruction scripts
 
-===============================================================
 ### 1. Demultiplex reads from different experiments:
 The ends of the reads are scanned for sequencing barcodes (using local sequence alignment) and sorted into subdirectories based on barcodes identified. The MATLAB command used was:
 
@@ -66,4 +65,3 @@ where:\
 ```theta_designed``` contains a list of coordinates specifying the designed pattern,\
 ```theta_translated``` is the superimposition of the final embedding that minimizes the RMSD between the designed and reconstructed pattern, and\
 ```lrms``` is the corresponding RMSD.
-===============================================================
