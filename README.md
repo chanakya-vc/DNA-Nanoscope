@@ -10,8 +10,8 @@ sort_barcoded_reads(fastq_dir,ONT_barcodes)
 ```
 
 where:
-```fastq_dir``` is the path of the fastq sequence files and
-```ONT_barcodes``` specifies the sequencing barcodes and their reverse complements.
+	```fastq_dir``` is the path of the fastq sequence files and
+	```ONT_barcodes``` specifies the sequencing barcodes and their reverse complements.
 The output is written into fastq files with reads that are sorted into sub-directories corresponding to the identity of the sequencing barcodes.
 
 ### 2. Extract record lengths and assign to correct target pair: 
