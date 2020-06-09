@@ -10,8 +10,8 @@ sort_barcoded_reads(fastq_dir,ONT_barcodes)
 ```
 
 where:
-	```fastq_dir``` is the path of the fastq sequence files and
-	```ONT_barcodes``` specifies the sequencing barcodes and their reverse complements.
+```fastq_dir``` is the path of the fastq sequence files and\
+```ONT_barcodes``` specifies the sequencing barcodes and their reverse complements.\
 The output is written into fastq files with reads that are sorted into sub-directories corresponding to the identity of the sequencing barcodes.
 
 ### 2. Extract record lengths and assign to correct target pair: 
@@ -22,11 +22,11 @@ pairwise_record_list = extract_pairwise_record_lengths(target_barcodes,path, lib
 ```
 
 where:
-```target_barcodes``` specifies the staple barcode sequences,
-```path``` specifies the path of the fastq reads,
-```library_size``` specifies the number of sequencing libraries that were combined for a single run,
-```color_length``` specifies the length of the auxiliary tag sequence, and
-```pairwise_record_list``` is the output, a matrix of size (n, n, 2001) where n is the number of target points and cell (i, j, k) holds the number of distance records of length k bases (only counting the repeat region) between points i and j. All distance records of length > 2000 are stored in the slice (:, :, 2001).
+```target_barcodes``` specifies the staple barcode sequences,\
+```path``` specifies the path of the fastq reads,\
+```library_size``` specifies the number of sequencing libraries that were combined for a single run,\
+```color_length``` specifies the length of the auxiliary tag sequence, and\
+```pairwise_record_list``` is the output, a matrix of size (n, n, 2001) where n is the number of target points and cell (i, j, k) holds the number of distance records of length k bases (only counting the repeat region) between points i and j. All distance records of length > 2000 are stored in the slice (:, :, 2001).\
 ```pairwise_record_list``` variables from different sequencing runs of the same experiment were combined by simply adding them.
 
 ### 3. Infer the measured distance between every target pair: 
