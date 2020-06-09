@@ -5,7 +5,9 @@ DNA Nanoscope "sequencing by imaging" reconstruction scripts
 ### 1. Demultiplex reads from different experiments:
 The ends of the reads are scanned for sequencing barcodes (using local sequence alignment) and sorted into subdirectories based on barcodes identified. The MATLAB command used was:
 
+```
 sort_barcoded_reads(fastq_dir,ONT_barcodes)
+```
 
 where:
 fastq_dir is the path of the fastq sequence files and
